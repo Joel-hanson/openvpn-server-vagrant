@@ -18,7 +18,7 @@ source ./config.sh
 source ./interfaces.sh
 
 # Install OpenVPN and expect
-apt-get -y install openvpn easy-rsa expect
+apt-get install -y openvpn easy-rsa expect
 
 # Set up the CA directory
 make-cadir ~/openvpn-ca
