@@ -10,8 +10,11 @@ fi
 KEY_DIR=~/openvpn-ca/keys
 OUTPUT_DIR=~/client-configs/files
 BASE_CONFIG=~/client-configs/base.conf
-
 cat ${BASE_CONFIG} \
+    <(echo -e 'reneg-sec 300 \n') \
+    <(echo -e 'ping 10 \n') \
+    <(echo -e 'ping-restart 60 \n') \
+    <(echo -e 'mute-replay-warnings \n') \
     <(echo -e '<ca>') \
     ${KEY_DIR}/ca.crt \
     <(echo -e '</ca>\n<cert>') \

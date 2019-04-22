@@ -56,6 +56,7 @@ sed -i "s/;group nogroup/group nogroup/" /etc/openvpn/server.conf
 echo "push \"redirect-gateway def1 bypass-dhcp\"" >> /etc/openvpn/server.conf
 echo "push \"dhcp-option DNS 208.67.222.222\"" >> /etc/openvpn/server.conf
 echo "push \"dhcp-option DNS 208.67.220.220\"" >> /etc/openvpn/server.conf
+echo "duplicate-cn" >> /etc/openvpn/server.conf
 
 # Allow IP forwarding
 sed -i "s/#net.ipv4.ip_forward/net.ipv4.ip_forward/" /etc/sysctl.conf
